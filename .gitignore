@@ -1,0 +1,152 @@
+# ======================================================================
+# Enterprise RAG Engine – Monorepo .gitignore
+# Services: NestJS (TypeScript) + FastAPI (Python)
+# Stack: PostgreSQL, Qdrant, Redis, MinIO, Ollama, OpenTelemetry
+# ======================================================================
+
+# -----------------------------
+# OS / Editor / IDE
+# -----------------------------
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*.tmp
+*.log
+.npmrc
+*.orig
+.idea/
+.vscode/
+.vscode/*
+!.vscode/extensions.json   # allow recommended extensions if you add it
+!.vscode/settings.json     # allow shared settings if you add it
+.obsidian/                 # ignore Obsidian workspace metadata (optional)
+
+# -----------------------------
+# Node / TypeScript (all services)
+# -----------------------------
+**/node_modules/
+**/dist/
+**/build/
+**/.eslintcache
+**/*.tsbuildinfo
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log
+coverage/
+coverage/**
+
+# Do NOT ignore lockfiles; commit them
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
+
+# -----------------------------
+# Python (FastAPI service)
+# -----------------------------
+**/.venv/
+venv/
+ENV/
+env/
+**/__pycache__/
+**/*.py[cod]
+**/*.pyo
+**/.pytest_cache/
+**/.mypy_cache/
+**/.ruff_cache/
+.pytest_cache/
+.mypy_cache/
+.venv/
+pip-wheel-metadata/
+pip-log.txt
+htmlcov/
+.coverage
+.coverage.*
+coverage.xml
+
+# -----------------------------
+# Environment variables / Secrets
+# -----------------------------
+# Keep example env files tracked; ignore real secrets
+*.env
+*.env.*        # e.g., .env.local, .env.dev
+!.env.example
+**/.env
+**/.env.*
+!**/.env.example
+
+# keys and certs (allow examples)
+*.pem
+*.key
+*.crt
+*.der
+*.pfx
+!**/*example*.pem
+!**/*example*.key
+!**/*example*.crt
+
+# -----------------------------
+# Docker / Compose
+# -----------------------------
+docker-compose.override.yml
+.docker/
+.dockerignore.local
+
+# -----------------------------
+# Data / Models / Artifacts (optional local paths)
+# -----------------------------
+# Ignore local caches or large artifacts if you create them
+services/ai-engine/models/
+services/ai-engine/.cache/
+services/ai-engine/tmp/
+tmp/
+temp/
+**/tmp/
+
+# If you keep large sample docs locally, ignore raw dumps (keep curated small samples)
+# services/ai-engine/data/raw/
+# services/ai-engine/data/tmp/
+
+# -----------------------------
+# OpenTelemetry / Logs (runtime)
+# -----------------------------
+logs/
+**/logs/
+*.trace
+*.perf
+
+# -----------------------------
+# Misc build tools
+# -----------------------------
+.eslintcache
+.bundle/
+.sass-cache/
+.nyc_output/
+tsconfig.tsbuildinfo
+
+# -----------------------------
+# OS-specific extras
+# -----------------------------
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+desktop.ini
+
+# -----------------------------
+# Kubernetes / Cloud (optional local)
+# -----------------------------
+.kube/
+terraform.tfstate
+terraform.tfstate.backup
+*.tfvars
+.terraform/
+
+# -----------------------------
+# Generated docs (optional)
+# Uncomment if you auto-render diagrams and don't want to track outputs
+# -----------------------------
+# docs/diagrams/*.png
+# docs/diagrams/*.svg
+# docs/diagrams/*.pdf
